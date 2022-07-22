@@ -1,6 +1,7 @@
 // Next
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 // React Hooks
 import { useRef, useState } from "react";
@@ -20,15 +21,6 @@ import { AiFillInstagram } from "react-icons/ai";
 
 // react scroll
 import * as Scroll from "react-scroll";
-import {
-  Link,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
 
 export default function Home() {
   const about = useRef(null);
@@ -63,9 +55,37 @@ export default function Home() {
           </div>
           <div className="">
             <div className="hidden lg:flex gap-7 text-4xl justify-center ml-14 pt-8">
-              <button onClick={scrollToElement}>ABOUT</button>
-              <button onClick={scrollToElementPricing}>PRICING</button>
-              <button onClick={scrollToElementContact}>CONTACT</button>
+              <button
+                type="button"
+                onClick={scrollToElement}
+                className="hover:cursor-pointer"
+              >
+                ABOUT
+              </button>
+              <button
+                type="button"
+                onClick={scrollToElementPricing}
+                className="hover:cursor-pointer"
+              >
+                PRICING
+              </button>
+              <button
+                type="button"
+                onClick={scrollToElementContact}
+                className="hover:cursor-pointer"
+              >
+                CONTACT
+              </button>
+            </div>
+            <div className="hidden lg:flex absolute top-3 right-3">
+              <Link href="/login">
+                <button
+                  type="button"
+                  class="border border-indigo-500 bg-indigo-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-indigo-600 focus:outline-none focus:shadow-outline mx-auto"
+                >
+                  Login
+                </button>
+              </Link>
             </div>
             <div className="lg:hidden flex justify-end pt-3 pr-3">
               <Dropdown
